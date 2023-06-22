@@ -50,7 +50,7 @@ let layerControl = L.control.layers({
         eGrundkarteTirol.nomenklatur,
     ])
 }, {
-    "Route der Etappe": themaLayer.route.addTo(map)
+    "Zustiegsroute zum Photospot": themaLayer.route.addTo(map)
 }).addTo(map);
 
 // Maßstab
@@ -63,27 +63,6 @@ let controlElevation = L.control.elevation({
     time: false,
     elevationDiv: "#profile",
     height: 300,
-    theme: "bike-tirol"
+    theme: "zustieg"
 }).addTo(map);
-controlElevation.load("./data/mutterberger_see.gpx");
-
-// Pulldown für Navigation
-let pulldown = document.querySelector("#pulldown");
-for (let spot of SPOTS) {
-    //console.log(etappe);
-    let status = "";
-    if (sport.nr == "1") {
-        status = "selected";
-    }
-    pulldown.innerHTML += `<option ${status} value="${spot.user}">Etappe ${spot.nr}: ${spot.spot}</option>`
-}
-
-// auf Änderungen im Pulldown reagieren
-pulldown.onchange = function(evt) {
-    //console.log(pulldown.value);
-    let url = `https://astrophototirol.github.io/${pulldown.value}
-    `;
-    //console.log(url);
-    //console.log(window.location.href)
-    window.location.href = url;
-}
+controlElevation.load("./data/mutterberger_see.gpx")
