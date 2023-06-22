@@ -69,19 +69,20 @@ controlElevation.load("./data/mutterberger_see.gpx");
 
 // Pulldown für Navigation
 let pulldown = document.querySelector("#pulldown");
-for (let etappe of ETAPPEN) {
+for (let spot of SPOTS) {
     //console.log(etappe);
     let status = "";
-    if (etappe.nr == "7") {
+    if (sport.nr == "1") {
         status = "selected";
     }
-    pulldown.innerHTML += `<option ${status} value="${etappe.user}">Etappe ${etappe.nr}: ${etappe.etappe}</option>`
+    pulldown.innerHTML += `<option ${status} value="${spot.user}">Etappe ${spot.nr}: ${spot.spot}</option>`
 }
 
 // auf Änderungen im Pulldown reagieren
 pulldown.onchange = function(evt) {
     //console.log(pulldown.value);
-    let url = `https://${pulldown.value}.github.io/biketirol`;
+    let url = `https://astrophototirol.github.io/${pulldown.value}
+    `;
     //console.log(url);
     //console.log(window.location.href)
     window.location.href = url;
