@@ -65,7 +65,7 @@ let controlElevation = L.control.elevation({
     height: 300,
     theme: "bike-tirol"
 }).addTo(map);
-controlElevation.load("./data/etappe7.gpx");
+controlElevation.load("./data/mutterberger_see.gpx");
 
 // Pulldown für Navigation
 let pulldown = document.querySelector("#pulldown");
