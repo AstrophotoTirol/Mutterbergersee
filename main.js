@@ -1,4 +1,4 @@
-/* Bike Trail Tirol Beispiel */
+/* Mutterberger See */
 
 // Innsbruck
 let ibk = {
